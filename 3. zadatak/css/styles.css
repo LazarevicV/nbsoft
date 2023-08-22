@@ -1,0 +1,29 @@
+html {
+  height: 100vh;
+}
+
+body {
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+img {
+    width: 100%;
+  }
+
+  .your-class {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 10vh;
+  }
+
+  .carousel-item {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; 
+  }
+  
+  .carousel-item.slick-active {
+    opacity: 1;
+  }
