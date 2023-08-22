@@ -1,0 +1,44 @@
+Zadatak 1: HTML
+Napraviti HTML stranicu primera izgleda vašeg CV-a. Stranica mora biti responsive. Koristiti Bootstrap grid.
+
+Zadatak 2: JS validacija forme
+Koristeći Bootstrap, napraviti formu za unos korsinika u bazu. Forma bi trebalo da sadrži: ime, prezime, pol, godinu rođenja, adresu, grad. Na formi je obavezno da se nadje po jedan element: textfield, textarea, select, checkbox.
+Uraditi validaciju forme, tako da ne može da se desi da korisnik unese nevalidne podatke.
+Formu slati preko ajax funkcije.
+Nakon slanja podataka, formu skloniti a na njeno mesto ispisati poruku za uspesno slanje poruke i poslate vrednosti
+
+Zadatak 3: Eksterne biblioteke
+Napraviti slajder. Napomena: može se koristiti externa skripta https://kenwheeler.github.io/slick/
+
+4. PHP zadatak
+
+4.1. Kreirati rest JSON api, koji prikazuje u json formatu sve porudzbine sa stavkama koje se nalaze u bazi
+* strukturu tabele videti u zadataku 5 
+Pisati Objektno orijentisan PHP. 
+
+4.2. napraviti rest json api, koji prima podatake preko servisa, i snima podatke u bazi. 
+Web servis treba da omogući registraciju korisnika spolja kada neko pozove web servis sa prosledjenim podacima.  
+Obratiti paznju na segment sigurnosti, da bi samo verifikovani korisnici mogli da koriste servis.
+Pisati Objektno orijentisan PHP. 
+
+4.3. napraviti php skriptu koja koristi servis iz tacke 4.2. tako da preko json rest API-ja moze da registruje korisnika sa podacima: ime, prezime, email, telefon, username, password, grad, postanski broj, adresa. 
+Pisati Objektno orijentisan PHP. 
+
+Zadatak 5: SQL
+
+Data je relaciona šema:
+
+User(id, firstname, lastname, phone, email, dateCreate, dateEdit)
+Order(id, userId, value, dateCreate, dateEdit)
+OrderItem(id, orderId, value, productId)
+Product(id, name, price)
+
+* Prva grupa zadataka:
+a) Prikažite sve kororisnike koji su se prijavili u prethodna dva dana
+b) Prikažite ime I prezime korisnika, id porudžbine I ukupnu vrednost svih porudžbinama
+
+* Druga grupa zadataka:
+c) Prikažite sve korisnike koji su imali najmanje dve porudžbine
+d) Prikažite ime I prezime korisnika, id porudžbine I broj stavki za svaku porudžbinu
+e) Prikažite ime I prezime korisnika, id porudžbine koja ima najmanje dve stavke
+f) Prikažite sve korisnike koji su kupili najmanje tri različita proizvoda u svim porudžbinama      

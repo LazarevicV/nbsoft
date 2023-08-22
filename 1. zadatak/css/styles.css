@@ -1,0 +1,11 @@
+.blue_line_separator {
+    border-bottom: 5px solid #1f79c7 !important;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 992px) {
+    .blue_line_separator {
+        margin-top: 5vh;
+    }
+  }
