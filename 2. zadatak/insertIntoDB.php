@@ -35,6 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $smtm->bindParam(7, $prihvati);
 
     $smtm->execute();
+
+    // this line is important in order for ajax to be successful
     echo json_encode(array("message" => "Data successfully inserted"));
     http_response_code(201);
 }

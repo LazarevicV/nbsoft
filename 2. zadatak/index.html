@@ -13,34 +13,22 @@
     <h1 class="text-center">Jquery forma</h1>
     <div class="container mt-5">
       <form
-        class="border border-dark bg-secondary p-5 rounded"
+        class="border border-dark bg-secondary p-5 rounded needs-validation"
         method="POST"
         id="forma"
       >
         <div class="form-group">
           <label for="ime">First name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="ime"
-            name="ime"
-            required
-          />
+          <input type="text" class="form-control" id="ime" name="ime" />
           <span style="color: red" id="nameGreska"></span>
         </div>
         <div class="form-group">
           <label for="prezime">Prezime</label>
-          <input
-            type="text"
-            class="form-control"
-            id="prezime"
-            name="prezime"
-            required
-          />
+          <input type="text" class="form-control" id="prezime" name="prezime" />
         </div>
         <div class="form-group">
           <label for="gender">Pol</label>
-          <select class="form-control" id="pol" name="pol" required>
+          <select class="form-control" id="pol" name="pol">
             <option value="muski">Muški</option>
             <option value="zenski">Ženski</option>
             <option value="drugo">Drugo</option>
@@ -53,18 +41,11 @@
             class="form-control"
             id="godinaRodjenja"
             name="godinaRodjenja"
-            required
           />
         </div>
         <div class="form-group">
           <label for="grad">Grad</label>
-          <input
-            type="text"
-            class="form-control"
-            id="grad"
-            name="grad"
-            required
-          />
+          <input type="text" class="form-control" id="grad" name="grad" />
         </div>
         <div class="form-group">
           <label for="adresa">Adresa</label>
@@ -73,7 +54,6 @@
             id="adresa"
             name="adresa"
             rows="3"
-            required
           ></textarea>
         </div>
 
@@ -90,7 +70,9 @@
             >
           </div>
         </div>
-        <button id="posalji" class="btn btn-primary">Predaj formu</button>
+        <button type="submit" id="posalji" class="btn btn-primary">
+          Predaj formu
+        </button>
       </form>
 
       <div id="successForm"></div>
