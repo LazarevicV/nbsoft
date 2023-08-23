@@ -45,7 +45,6 @@ class Controller
         $user = new User($this->conn);
         $db_user = $user->getUserByUsername($username);
         if ($user) {
-            echo "postoji user";
             if ($db_user->password === $password) {
                 session_start();
                 $_SESSION['user'] = $db_user;
@@ -78,7 +77,7 @@ class Controller
         $user = new User($this->conn);
         $user->saveUser($ime, $prezime, $email, $telefon, $username, $lozinka, $grad, $postanski_broj, $adresa);
 
-        header("Location: http://localhost/nbsoft/4.%20zadatak/");
+        header("Location: http://localhost/nbsoft/4.%20zadatak/registration");
     }
 
     public function logout()

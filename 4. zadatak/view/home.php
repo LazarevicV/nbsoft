@@ -2,13 +2,6 @@
 
 session_start();
 $title = "Home page";
-
-print_r($_SESSION['user']);
-
-echo "<br>";
-
-echo $_SESSION['user']->username;
-
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +22,12 @@ echo $_SESSION['user']->username;
             <h2>Currently working routes:</h2>
             <a href="http://localhost/nbsoft/4.%20zadatak/">Home route</a><br>
             <a href="http://localhost/nbsoft/4.%20zadatak/api/orders">All orders api route</a><br>
+            <?php if (isset($_SESSION['user']) && $_SESSION['user']->role == 'admin') {
+            ?> <a href="http://localhost/nbsoft/4.%20zadatak/register">Register page</a>
+            <?php }  ?>
+            <?php if (!isset($_SESSION['user'])) {
+            ?> <a href="http://localhost/nbsoft/4.%20zadatak/login">Login page</a>
+            <?php }  ?>
         </div>
     </div>
 
