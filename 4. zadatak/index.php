@@ -22,22 +22,18 @@ require_once './controllers/Controller.php';
 // echo $method;
 // echo "<br>";
 
+$controller = new Controller($conn);
+
 if ($method === 'GET') {
     // provera da li postoji get metod ka sledecoj ruti
     // ako jeste onda prikazuje json sadrzaj podataka iz baze
     if ($request === '/api/orders') {
-        $order = new Order($conn);
-        $data = $order->all();
-        sendResponse($data);
+        $controller->orders();
     } else if ($request === '/api/some-other-endpoint') {
-        $controller = new Controller($conn);
         $controller->handleSomeOtherEndpoint();
     } else {
-        echo "404 page not found";
-        // sendResponse(array('message' => 'Invalid endpoint.'), 404);
-        header("Location: http://localhost/nbsoft/4.%20zadatak/view/_404.php");
-        exit;
+        $controller->error404();
     }
 } else {
-    sendResponse(array('message' => 'Method not allowed.'), 405);
+    echo "Method je post";
 }
