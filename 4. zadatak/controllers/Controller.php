@@ -9,6 +9,11 @@ class Controller
         $this->conn = $conn;
     }
 
+    public function homePage()
+    {
+        include __DIR__ . '/../view/home.php';
+    }
+
     public function orders()
     {
         // first we require the Order class
