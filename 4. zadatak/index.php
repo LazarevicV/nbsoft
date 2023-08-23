@@ -23,6 +23,7 @@ require_once './controllers/Controller.php';
 
 $controller = new Controller($conn);
 
+// check if there is get method for certain route
 if ($method === 'GET') {
     if ($request === '' || $request === '/') {
         // this is the home page of the application
@@ -32,11 +33,33 @@ if ($method === 'GET') {
     // ako postoji onda prikazuje json sadrzaj podataka iz baze
     else if ($request === '/api/orders') {
         $controller->orders();
-    } else if ($request === '/api/some-other-endpoint') {
-        $controller->handleSomeOtherEndpoint();
+    } else if ($request === '/register') {
+        session_start();
+        if (isset($_SESSION['user'])) {
+            if ($_SESSION['user']->role == "admin") {
+                $controller->redirectRegister();
+            } else {
+                $controller->redirectLogin();
+            }
+        } else {
+            $controller->redirectLogin();
+        }
+    } else if ($request === '/page-not-found') {
+        $controller->pageNotFound();
+    } else if ($request === '/login') {
+        $controller->login();
+    } else if ($request === '/logout') {
+        $controller->logout();
     } else {
         $controller->error404();
     }
-} else {
-    echo "Method je post";
+} else { // if there is no get method, it means that there is post method
+    if ($request === '/check_login') {
+        $controller->check_login();
+    }
+    if ($request === '/process_registration') {
+        $controller->process_registration();
+    } else {
+        $controller->error404();
+    }
 }

@@ -1,6 +1,13 @@
 <?php
 
+session_start();
 $title = "Home page";
+
+print_r($_SESSION['user']);
+
+echo "<br>";
+
+echo $_SESSION['user']->username;
 
 ?>
 
@@ -24,6 +31,8 @@ $title = "Home page";
             <a href="http://localhost/nbsoft/4.%20zadatak/api/orders">All orders api route</a><br>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
 </body>
