@@ -1,6 +1,5 @@
 <?php
 require_once './connection/connection.php';
-require_once './classes/Order.php';
 
 // this function is used to send response to the client
 function sendResponse($data, $statusCode = 200)
@@ -25,18 +24,18 @@ require_once './controllers/Controller.php';
 $controller = new Controller($conn);
 
 if ($method === 'GET') {
-    if ($request === '/') {
+    if ($request === '' || $request === '/') {
         // this is the home page of the application
         $controller->homePage();
     }
     // provera da li postoji get metod ka sledecoj ruti
     // ako postoji onda prikazuje json sadrzaj podataka iz baze
-    if ($request === '/api/orders') {
+    else if ($request === '/api/orders') {
         $controller->orders();
     } else if ($request === '/api/some-other-endpoint') {
         $controller->handleSomeOtherEndpoint();
     } else {
-        // $controller->error404();
+        $controller->error404();
     }
 } else {
     echo "Method je post";

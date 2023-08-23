@@ -1,4 +1,11 @@
+# Main .htaccess
+
 RewriteEngine On
+
+# Deny access to specific directories
+RewriteRule ^(view|controllers|connection|classes) - [R=403,L]
+
+# Route all requests through index.php
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ index.php [QSA,L]
