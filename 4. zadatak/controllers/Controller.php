@@ -9,12 +9,14 @@ class Controller
         $this->conn = $conn;
     }
 
-    public function handleOrdersRoute()
+    public function orders()
     {
+        // first we require the Order class
+        // then we use all method to get all orders
         require_once __DIR__ . '/../classes/Order.php';
         $order = new Order($this->conn);
         $data = $order->all();
-        return $data;
+        sendResponse($data);
     }
 
     // Add other methods to handle different routes
@@ -22,5 +24,11 @@ class Controller
     public function handleSomeOtherEndpoint()
     {
         include __DIR__ . '/../view/login.php';
+    }
+
+    public function error404()
+    {
+        header("Location: http://localhost/nbsoft/4.%20zadatak/view/_404.php");
+        exit();
     }
 }
