@@ -20,10 +20,25 @@ class User
 
     public function saveUser($ime, $prezime, $email, $telefon, $username, $lozinka, $grad, $postanski_broj, $adresa)
     {
+        $hashedPassword = hash('sha256', $lozinka);
 
         // save this data in the users table
-        $sql = "INSERT INTO users (ime, prezime, email, telefon, username, password, grad, postanski_broj, adresa) VALUES ('$ime', '$prezime', '$email', '$telefon', '$username', '$lozinka', '$grad', '$postanski_broj', '$adresa')";
+        $sql = "INSERT INTO users (ime, prezime, email, telefon, username, password, grad, postanski_broj, adresa) VALUES ('$ime', '$prezime', '$email', '$telefon', '$username', '$hashedPassword', '$grad', '$postanski_broj', '$adresa')";
         $result = $this->conn->query($sql);
         // $result->execute();
+    }
+
+    public function loggedTime()
+    {
+        $sql = "UPDATE users SET last_login = NOW() WHERE id = " . $_SESSION['user']->id;
+        $result = $this->conn->query($sql);
+    }
+
+    public function all()
+    {
+        $sql = "SELECT * FROM users";
+        $result = $this->conn->query($sql);
+        $users = $result->fetchAll();
+        return $users;
     }
 }

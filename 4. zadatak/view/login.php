@@ -1,11 +1,6 @@
 <?php
-
-session_start();
 $title = "Registration page";
 $prefix = '/nbsoft/4.%20zadatak';
-
-global $greska_username;
-global $greska_password;
 
 ?>
 
@@ -37,13 +32,11 @@ $title = "Home page";
             <div class="form-row">
                 <div class="col-5">
                     <label class="sr-only" for="inlineFormInput">Username</label>
-                    <input required type="text" class="form-control mb-2" id="username" name="username" placeholder="Your username">
-                    <span style="color: red"><?= $GLOBALS['greska_username'] ?></span>
+                    <input type="text" class="form-control mb-2" id="username" name="username" placeholder="Your username">
                 </div>
                 <div class="col-5">
                     <label class="sr-only" for="inlineFormInput">Password</label>
-                    <input required type="password" class="form-control mb-2" id="password" name="password" placeholder="Your password">
-                    <span style="color: red"><?= $GLOBALS['greska_password'] ?></span>
+                    <input type="password" class="form-control mb-2" id="password" name="password" placeholder="Your password">
                 </div>
                 <div class="col-auto">
                     <button type="submit" class="btn btn-primary mb-2">Submit</button>

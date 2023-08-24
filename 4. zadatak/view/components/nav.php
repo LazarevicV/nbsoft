@@ -32,6 +32,7 @@ $prefix = '/nbsoft/4.%20zadatak';
                 <?php if (isset($_SESSION['user'])) {
                 ?>
                     <li class="nav-item"><a class="nav-link" href="<?= $prefix ?>/logout">Logout</a></li>
+                    <li class="nav-item text-white mt-2 border rounded border-white w-auto"><?= $_SESSION['user']->username ?></li>
                 <?php } else { ?>
                     <li class="nav-item"><a class="nav-link" href="<?= $prefix ?>/login">Login</a></li>
                 <?php } ?>
