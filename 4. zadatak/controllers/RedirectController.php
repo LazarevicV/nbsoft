@@ -12,25 +12,29 @@ class RedirectController
 
     public function redirectHome()
     {
-        header("Location: $this->prefix/");
+        $url = $this->prefix.'/';
+        header("Location: $url");
         exit();
     }
 
     public function redirectLogin()
     {
-        header("Location: $this->prefix/login");
+        $url = $this->prefix.'/login';
+        header("Location: $url");
         exit();
     }
 
     public function redirectRegister()
     {
-        header("Location: $this->prefix/register");
+        $url = $this->prefix . '/register';
+        header("Location: $url");
         exit();
     }
 
     public function error404()
     {
-        header("Location: $this->prefix/page-not-found");
+        $url = $this->prefix . '/page-not-found';
+        header("Location: $url");
         exit();
     }
 }
