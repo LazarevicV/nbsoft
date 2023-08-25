@@ -13,10 +13,19 @@ class ApiController
 
     public function users()
     {
-        require_once __DIR__ . '/../classes/User.php';
-        $user = new User($this->conn);
-        $data = $user->all();
-        Response::sendResponse($data);
+        session_start();
+        if (isset($_SESSION['user'])) {
+            if ($_SESSION['user']->role === 'admin') {
+                require_once __DIR__ . '/../classes/User.php';
+                $user = new User($this->conn);
+                $data = $user->all();
+                Response::sendResponse($data);
+            } else {
+                Response::sendResponse(['error' => 'You are not authorized to access this page.']);
+            }
+        } else {
+            Response::sendResponse(['error' => 'You are not authorized to access this page.']);
+        }
     }
 
     public function orders()
@@ -25,7 +34,18 @@ class ApiController
         $order = new Order($this->conn);
         $data = $order->all();
 
-        $groupedData = []; // Initialize the grouped data array
+        session_start();
+        if (isset($_SESSION['user'])) {
+            if (!$_SESSION['user']->role == 'admin') {
+                Response::sendResponse(['error' => 'You are not authorized to access this page.']);
+                exit();
+            }
+        } else {
+            Response::sendResponse(['error' => 'You are not authorized to access this page.']);
+            exit();
+        }
+
+        $groupedData = [];
 
         foreach ($data as $row) {
             $orderID = $row->porudzbina_id;
