@@ -15,7 +15,7 @@ class ApiController
     {
         session_start();
         if (isset($_SESSION['user'])) {
-            if ($_SESSION['user']->role === 'admin') {
+            if ($_SESSION['user']->role == 'admin') {
                 require_once __DIR__ . '/../classes/User.php';
                 $user = new User($this->conn);
                 $data = $user->all();
@@ -36,7 +36,7 @@ class ApiController
 
         session_start();
         if (isset($_SESSION['user'])) {
-            if (!$_SESSION['user']->role == 'admin') {
+            if ($_SESSION['user']->role == 'user') {
                 Response::sendResponse(['error' => 'You are not authorized to access this page.']);
                 exit();
             }
