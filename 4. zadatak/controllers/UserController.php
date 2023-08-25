@@ -1,5 +1,5 @@
 <?php
-
+require_once "./RedirectController.php";
 class UserController
 {
     private $conn;
@@ -13,31 +13,33 @@ class UserController
     {
         // we need to check if there is user with recieved username and password
         require_once __DIR__ . '/../classes/User.php';
+        $redirectController = new RedirectController($this->conn);
         $username = $_POST['username'];
         $password = $_POST['password'];
 
         if (!isset($username) || !isset($password)) {
-            header("Location: http://localhost/nbsoft/4.%20zadatak/login");
+            $redirectController->redirectLogin();
             exit();
         }
 
         $user = new User($this->conn);
         $db_user = $user->getUserByUsername($username);
-        if ($user) {
+
+        if ($db_user) {
             $hashedPassword = hash('sha256', $password);
             if ($db_user->password === $hashedPassword) {
                 session_start();
                 $_SESSION['user'] = $db_user;
-                $user->loggedTime(); // dodaj trenutno vreme u bazu 
-                header("Location: http://localhost/nbsoft/4.%20zadatak/");
-                exit();
+                $user->loggedTime(); // dodaj trenutno vreme u bazu
+                $redirectController->redirectHome();
                 session_write_close();
+                exit();
             } else {
-                header("Location: http://localhost/nbsoft/4.%20zadatak/login");
+                $redirectController->redirectLogin();
                 exit();
             }
         } else {
-            header("Location: http://localhost/nbsoft/4.%20zadatak/login");
+            $redirectController->redirectLogin();
             exit();
         }
     }
@@ -73,7 +75,9 @@ class UserController
     {
         session_start();
         session_destroy();
-        header("Location: http://localhost/nbsoft/4.%20zadatak/");
+        $redirectController = new RedirectController
+        ($this->conn);
+        $redirectController->redirectHome();
         exit();
     }
 }
