@@ -1,9 +1,9 @@
 <?php
-    require_once "./connection/config.php";
-    $title = "Home page";
-    $prefix = PREFIX;
-echo "$prefix";
-    ?>
+require_once __DIR__ . "/connection/config.php";
+$title = "Home page";
+$prefix = PREFIX;
+echo $prefix . '/users.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@ echo "$prefix";
             <h2>Currently working routes:</h2>
             <a href="<?= $prefix ?>/">Home
                 route</a><br>
-            <a href="<?= $prefix ?>/users.php">Users logged withing two days</a><br>
+            <a href="<?= $prefix . "/users.php" ?>">Users logged withing two days</a><br>
             <a href="<?= $prefix ?>/totalValueOrders.php">Total value of orders for each user</a><br>
             <a href="<?= $prefix ?>/moreThenTwoOrders.php">Users with atleast two orders</a><br>
             <a href="<?= $prefix ?>/countOfOrderItems.php">

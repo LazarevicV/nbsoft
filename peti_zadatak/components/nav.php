@@ -1,5 +1,5 @@
 <?php
-$prefix = '/nbsoft/5.%20zadatak';
+$prefix = PREFIX;
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
