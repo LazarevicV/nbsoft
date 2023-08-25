@@ -14,11 +14,6 @@ class ViewController extends Controller
         $this->renderHtml('home', []);
     }
 
-    // public function handleSomeOtherEndpoint()
-    // {
-    //     include __DIR__ . '/../view/login.php';
-    // }
-
     public function login()
     {
         session_start();
@@ -35,12 +30,20 @@ class ViewController extends Controller
     {
         session_start();
         if (isset($_SESSION['user'])) {
+            if ($_SESSION['user']->role === 'admin') {
+                $this->renderHtml('register', []);
+            } else {
+                require_once __DIR__ . '/../controllers/RedirectController.php';
+                $redirect = new RedirectController($this->conn);
+                $redirect->redirectHome();
+                exit();
+            }
+        } else {
             require_once __DIR__ . '/../controllers/RedirectController.php';
             $redirect = new RedirectController($this->conn);
             $redirect->redirectHome();
             exit();
         }
-        $this->renderHtml('register', []);
     }
 
     public function pageNotFound()
