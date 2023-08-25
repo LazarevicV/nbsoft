@@ -41,31 +41,39 @@ function validateData() {
 
   if (!validateName(ime)) {
     $("#ime").addClass("is-invalid");
-    $("#imeGreska").text("Ime nije validno.");
+    $("#imeGreska").text("Name can contain only big and small letters!");
   }
   if (!validateName(prezime)) {
     $("#prezime").addClass("is-invalid");
-    $("#prezimeGreska").text("Prezime nije validno.");
+    $("#prezimeGreska").text(
+      "Last name can contain only big and small letters!"
+    );
   }
   if (!validateGender(pol)) {
     $("#pol").addClass("is-invalid");
-    $("#polGreska").text("Pol nije validan.");
+    $("#polGreska").text("You must pick something for your gender!");
   }
   if (!validateBirthYear(godinaRodjenja)) {
     $("#godinaRodjenja").addClass("is-invalid");
-    $("#godinaRodjenjaGreska").text("Godina rodjenja nije validna.");
+    $("#godinaRodjenjaGreska").text(
+      "Birth year must be from 1900 to current year!"
+    );
   }
   if (!validateCity(grad)) {
     $("#grad").addClass("is-invalid");
-    $("#gradGreska").text("Grad nije validan.");
+    $("#gradGreska").text("City can contain only big and small letters!");
   }
   if (!validateAddress(adresa)) {
     $("#adresa").addClass("is-invalid");
-    $("#adresaGreska").text("Adresa nije validna.");
+    $("#adresaGreska").text(
+      "Adress can only contain big and small letters, numbers and spaces!"
+    );
   }
   if (!prihvati) {
     $("#prihvati").addClass("is-invalid");
-    $("#prihvatiGreska").text("Morate prihvatiti uslove koriscenja!");
+    $("#prihvatiGreska").text(
+      "You must accept terms of conditions in order to continue!"
+    );
   }
 
   data = {

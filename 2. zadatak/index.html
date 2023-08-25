@@ -10,7 +10,7 @@
     />
   </head>
   <body>
-    <h1 class="text-center">Jquery forma</h1>
+    <h1 class="text-center">Jquery form</h1>
     <div class="container mt-5">
       <form
         class="border border-dark bg-secondary p-5 rounded needs-validation"
@@ -23,21 +23,21 @@
           <span style="color: red" id="imeGreska"></span>
         </div>
         <div class="form-group">
-          <label for="prezime">Prezime</label>
+          <label for="prezime">Last name</label>
           <input type="text" class="form-control" id="prezime" name="prezime" />
           <span style="color: red" id="prezimeGreska"></span>
         </div>
         <div class="form-group">
-          <label for="gender">Pol</label>
+          <label for="gender">Sex</label>
           <select class="form-control" id="pol" name="pol">
-            <option value="muski">Muški</option>
-            <option value="zenski">Ženski</option>
-            <option value="drugo">Drugo</option>
+            <option value="muski">Male</option>
+            <option value="zenski">Female</option>
+            <option value="drugo">Other</option>
           </select>
           <span style="color: red" id="polGreska"></span>
         </div>
         <div class="form-group">
-          <label for="godinaRodjenja">Godina rođenja</label>
+          <label for="godinaRodjenja">Birth year</label>
           <input
             type="number"
             class="form-control"
@@ -47,12 +47,12 @@
           <span style="color: red" id="godinaRodjenjaGreska"></span>
         </div>
         <div class="form-group">
-          <label for="grad">Grad</label>
+          <label for="grad">City</label>
           <input type="text" class="form-control" id="grad" name="grad" />
           <span style="color: red" id="gradGreska"></span>
         </div>
         <div class="form-group">
-          <label for="adresa">Adresa</label>
+          <label for="adresa">Adress</label>
           <textarea
             class="form-control"
             id="adresa"
@@ -71,12 +71,12 @@
               name="prihvati"
             />
             <label class="form-check-label" for="prihvati"
-              >Pristajem na uslove koriscenja</label
+              >I accept terms and conditions</label
             >
             <span style="color: red" id="prihvatiGreska"></span>
           </div>
         </div>
-        <button id="posalji" class="btn btn-primary">Predaj formu</button>
+        <button id="posalji" class="btn btn-primary">Submit form</button>
       </form>
 
       <div id="successForm"></div>
