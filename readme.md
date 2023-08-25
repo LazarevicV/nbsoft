@@ -20,6 +20,12 @@ To get started with the project, follow these steps:
    and also the file in <br>
    `/5.zadatak/connection/config.php`
 
+3. **Connect to database**
+    - Make two new databases in phpmyadmin
+    - First should be called: `nbsoft_2zadatak`
+    - Second should be called: `nbsoft-4zadatak`
+    - import each sql file into correct database
+
 ### Open project
 
 - In order to access each assigment in this project, make sure that your apache and mySQL servers are running.
@@ -31,18 +37,18 @@ To get started with the project, follow these steps:
 ### 1. assigment 
 
 1. **Project structure**
-    - css
-    - images <br>
+    - `css`
+    - `images` <br>
    index.html
 
 2. **Description**
-    - You can access this page by entering<br>`/1.%20zadatak/`<br> after your project path in url.
+    - You can access this page by entering<br>`/prvi_zadatak/`<br> after your project path in url.
     - Page is identical replica of my CV. That is done by using bootstrap grid system.
 
 ### 2. assigment 
 
 1. **Project structure**
-    - jss<br>
+    - `jss`<br>
         - main.js<br>
         - validation.js<br>
       
@@ -50,7 +56,7 @@ To get started with the project, follow these steps:
    - insertIntoDB.php
 
 2. **Description**
-    - You can access this page by entering<br>`/2.%20zadatak/`<br> after your project path in url.
+    - You can access this page by entering<br>`/drugi_zadatak/`<br> after your project path in url.
     - After that, form should be displayed
     - Validation is done in `validation.js`<br>
    and logic for sending the data with ajax is done in `main.js`.
@@ -61,14 +67,14 @@ To get started with the project, follow these steps:
 ### 3. assigment
 
 1. **Project structure**
-   - css<br>
-   - images<br>
-   - js
-   - slick<br>
+   - `css`<br>
+   - `images`<br>
+   - `js`
+   - `slick`<br>
    index.html
 
 2. **Description**
-    - You can access this page by entering<br>`/3.%20zadatak/`<br> after your project path in url.
+    - You can access this page by entering<br>`/treci_zadatak/`<br> after your project path in url.
     - After that, you should be able to see simple slider made with external slick library.
 
 ### 4. assigment
@@ -108,15 +114,41 @@ To get started with the project, follow these steps:
   global variables called `config.php`
 
 2. **Description**
-    - You can access this page by entering<br>`/4.%20zadatak/`<br> after your project path in url.
+    - You can access this page by entering<br>`/cetvrti_zadatak/`<br> after your project path in url.
     - After that, you should be able to see a homepage for this assigment. There, you have all links that you can 
       currently access
-    - You can log in with either regular user account or admin's account
+    - You can log in with either regular user account or admins account
     - **admin account:**
-      - **username**: vlazarevic
-      - **password**: sifrasifra
+      - **username**: admin
+      - **password**: admin
     - **standard account:**
       - you can either make one using admin account and going to the register page, or you can use this info
-      - **username**: arajkovic
-      - **password**: anaana
-    
+      - **username**: user
+      - **password**: user
+
+2.1 **More description**
+- Routes and who can access them
+    - `/` -> everyone
+    - `/login` -> only if there is no logged users
+    - `/logout` -> only logged-in users
+    - `/register` `/api/orders` `/api/users` -> only accessible by users with role **`admin`**
+    - if you try to go to other routes that are not listed here you will be redirected to the `/page-not-found` route.
+
+### 5. assigment
+1. **Project structure**
+    - `app`
+    - `components`
+    - `connection`
+    - atleastThreeProducts.php
+    - atleastTwoOrderItems.php
+    - countOfOrderItems.php
+    - index.php
+    - moreThenTwoOrders.php
+    - totalValueOrders.php
+    - users.php
+
+2. **Description**
+    - You can access this page by entering<br>`/peti_zadatak/`<br> after your project path in url.
+    - The home page is similar to last assigment. You have listed routes that you can visit.
+    - Each route shows different data as requested in assigment. 
+    - Data is connected with last assigment and they have same database.
