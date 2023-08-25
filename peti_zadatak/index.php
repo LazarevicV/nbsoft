@@ -2,7 +2,6 @@
 require_once __DIR__ . "/connection/config.php";
 $title = "Home page";
 $prefix = PREFIX;
-echo $prefix . '/users.php';
 ?>
 
 <!DOCTYPE html>
