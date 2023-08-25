@@ -26,6 +26,18 @@ $("#posalji").click(function (event) {
       forma.hide();
       let div = $("#successForm");
       div.text("Uspesno poslati podaci u bazu!");
+      let poruka = $("#poruka");
+      poruka.text("Poslati podaci:");
+      let podaci = $("#podaci");
+      podaci.html(`
+        <p>Ime: ${data.ime}</p>
+        <p>Prezime: ${data.prezime}</p>
+        <p>Pol: ${data.pol}</p>
+        <p>Godina rođenja: ${data.godinaRodjenja}</p>
+        <p>Grad: ${data.grad}</p>
+        <p>Adresa: ${data.adresa}</p>
+        <p>Prihvati: ${data.prihvati}</p>
+        `);
     },
     error: function (error) {
       console.log(error);
