@@ -57,7 +57,7 @@ class UserController
         $adresa = $_POST['adresa'];
 
         if (!isset($ime) || !isset($prezime) || !isset($email) || !isset($telefon) || !isset($username) || !isset($lozinka) || !isset($grad) || !isset($postanski_broj) || !isset($adresa)) {
-            require_once __DIR__ . '/../controllers/RedirectController.php';
+            require_once __DIR__ . "/RedirectController.php";
             $redirect = new RedirectController($this->conn);
             $redirect->redirectRegister();
             exit();
@@ -67,7 +67,7 @@ class UserController
         $user = new User($this->conn);
         $user->saveUser($ime, $prezime, $email, $telefon, $username, $lozinka, $grad, $postanski_broj, $adresa);
 
-        require_once __DIR__ . '/../controllers/RedirectController.php';
+        require_once __DIR__ . "/RedirectController.php";
         $redirect = new RedirectController($this->conn);
         $redirect->redirectHome();
         exit();
