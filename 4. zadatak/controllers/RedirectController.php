@@ -3,6 +3,7 @@
 class RedirectController
 {
     private $conn;
+    private $prefix = PREFIX_HOME;
 
     public function __construct($conn)
     {
@@ -11,25 +12,25 @@ class RedirectController
 
     public function redirectHome()
     {
-        header("Location: http://localhost/nbsoft/4.%20zadatak/");
+        header("Location: $this->prefix/");
         exit();
     }
 
     public function redirectLogin()
     {
-        header("Location: http://localhost/nbsoft/4.%20zadatak/login");
+        header("Location: $this->prefix/login");
         exit();
     }
 
     public function redirectRegister()
     {
-        header("Location: http://localhost/nbsoft/4.%20zadatak/register");
+        header("Location: $this->prefix/register");
         exit();
     }
 
     public function error404()
     {
-        header("Location: http://localhost/nbsoft/4.%20zadatak/page-not-found");
+        header("Location: $this->prefix/page-not-found");
         exit();
     }
 }
