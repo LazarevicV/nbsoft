@@ -1,5 +1,4 @@
 <?php
-require_once "./RedirectController.php";
 class UserController
 {
     private $conn;
@@ -13,6 +12,7 @@ class UserController
     {
         // we need to check if there is user with recieved username and password
         require_once __DIR__ . '/../classes/User.php';
+        require_once __DIR__ . "/RedirectController.php";
         $redirectController = new RedirectController($this->conn);
         $username = $_POST['username'];
         $password = $_POST['password'];
