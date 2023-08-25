@@ -75,6 +75,7 @@ class UserController
     {
         session_start();
         session_destroy();
+        require_once __DIR__ . '/RedirectController.php';
         $redirectController = new RedirectController
         ($this->conn);
         $redirectController->redirectHome();
