@@ -1,7 +1,8 @@
 <?php
     require_once "./connection/config.php";
     $title = "Home page";
-    $prefix = PREFIX
+    $prefix = PREFIX;
+echo "$prefix";
     ?>
 
 <!DOCTYPE html>
@@ -20,7 +21,7 @@
     <div class="container">
         <div class="text-center mt-5">
             <h2>Currently working routes:</h2>
-            <a href="<?= $prefix ?>/5.%20zadatak/">Home
+            <a href="<?= $prefix ?>/">Home
                 route</a><br>
             <a href="<?= $prefix ?>/users.php">Users logged withing two days</a><br>
             <a href="<?= $prefix ?>/totalValueOrders.php">Total value of orders for each user</a><br>
