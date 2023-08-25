@@ -60,6 +60,7 @@ class UserController
             require_once __DIR__ . '/../controllers/RedirectController.php';
             $redirect = new RedirectController($this->conn);
             $redirect->redirectRegister();
+            exit();
         }
 
         require_once __DIR__ . '/../classes/User.php';
@@ -69,6 +70,7 @@ class UserController
         require_once __DIR__ . '/../controllers/RedirectController.php';
         $redirect = new RedirectController($this->conn);
         $redirect->redirectHome();
+        exit();
     }
 
     public function logout()
