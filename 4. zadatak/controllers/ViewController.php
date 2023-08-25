@@ -48,6 +48,6 @@ class ViewController extends Controller
 
     public function pageNotFound()
     {
-        $this->renderHtml('404', []);
+        $this->renderHtml('_404', []);
     }
 }
