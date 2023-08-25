@@ -56,7 +56,8 @@ class UserController
         $postanski_broj = $_POST['postanski_broj'];
         $adresa = $_POST['adresa'];
 
-        if (!isset($ime) || !isset($prezime) || !isset($email) || !isset($telefon) || !isset($username) || !isset($lozinka) || !isset($grad) || !isset($postanski_broj) || !isset($adresa)) {
+        if (empty($ime) || empty($prezime) || empty
+            ($email) || empty($telefon) || empty($username) || empty($lozinka) || empty($grad) || empty($postanski_broj) || empty($adresa)) {
             require_once __DIR__ . "/RedirectController.php";
             $redirect = new RedirectController($this->conn);
             $redirect->redirectRegister();
