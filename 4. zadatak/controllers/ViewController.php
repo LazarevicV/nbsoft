@@ -1,6 +1,6 @@
 <?php
-
-class ViewController
+require_once __DIR__ . '/../controllers/Controller.php';
+class ViewController extends Controller
 {
     private $conn;
 
@@ -11,33 +11,40 @@ class ViewController
 
     public function homePage()
     {
-        include __DIR__ . '/../view/home.php';
+        $this->renderHtml('home', []);
     }
 
-    public function handleSomeOtherEndpoint()
-    {
-        include __DIR__ . '/../view/login.php';
-    }
+    // public function handleSomeOtherEndpoint()
+    // {
+    //     include __DIR__ . '/../view/login.php';
+    // }
 
     public function login()
     {
         session_start();
         if (isset($_SESSION['user'])) {
-            require_once __DIR__ . '/../controllers/Redirect.php';
-            $redirect = new RedirectController();
+            require_once __DIR__ . '/../controllers/RedirectController.php';
+            $redirect = new RedirectController($this->conn);
             $redirect->redirectHome();
             exit();
         }
-        include __DIR__ . '/../view/login.php';
+        $this->renderHtml('login', []);
     }
 
     public function register()
     {
-        include __DIR__ . '/../view/register.php';
+        session_start();
+        if (isset($_SESSION['user'])) {
+            require_once __DIR__ . '/../controllers/RedirectController.php';
+            $redirect = new RedirectController($this->conn);
+            $redirect->redirectHome();
+            exit();
+        }
+        $this->renderHtml('register', []);
     }
 
     public function pageNotFound()
     {
-        include __DIR__ . '/../view/_404.php';
+        $this->renderHtml('404', []);
     }
 }

@@ -8,4 +8,14 @@ class Controller
     {
         $this->conn = $conn;
     }
+
+    function renderHtml($viewname, $data)
+    {
+        include 'view/' . $viewname . ".php";
+    }
+
+    function renderJson($data)
+    {
+        echo json_encode($data);
+    }
 }

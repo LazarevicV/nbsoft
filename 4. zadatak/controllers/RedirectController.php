@@ -2,6 +2,13 @@
 
 class RedirectController
 {
+    private $conn;
+
+    public function __construct($conn)
+    {
+        $this->conn = $conn;
+    }
+
     public function redirectHome()
     {
         header("Location: http://localhost/nbsoft/4.%20zadatak/");

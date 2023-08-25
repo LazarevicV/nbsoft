@@ -56,7 +56,7 @@ class UserController
 
         if (!isset($ime) || !isset($prezime) || !isset($email) || !isset($telefon) || !isset($username) || !isset($lozinka) || !isset($grad) || !isset($postanski_broj) || !isset($adresa)) {
             require_once __DIR__ . '/../controllers/RedirectController.php';
-            $redirect = new RedirectController();
+            $redirect = new RedirectController($this->conn);
             $redirect->redirectRegister();
         }
 
@@ -65,7 +65,7 @@ class UserController
         $user->saveUser($ime, $prezime, $email, $telefon, $username, $lozinka, $grad, $postanski_broj, $adresa);
 
         require_once __DIR__ . '/../controllers/RedirectController.php';
-        $redirect = new RedirectController();
+        $redirect = new RedirectController($this->conn);
         $redirect->redirectHome();
     }
 
