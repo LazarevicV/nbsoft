@@ -25,9 +25,9 @@ $title = "Home page";
             </h1>
             <h2>Currently working routes:</h2>
             <a href="http://localhost/nbsoft/4.%20zadatak/">Home route</a><br>
-            <a href="http://localhost/nbsoft/4.%20zadatak/api/orders">All orders api route</a><br>
             <?php if (isset($_SESSION['user']) && $_SESSION['user']->role == 'admin') {
             ?>
+                <a href="http://localhost/nbsoft/4.%20zadatak/api/orders">All orders api route</a><br>
                 <a href="http://localhost/nbsoft/4.%20zadatak/register">Register page</a><br>
                 <a href="http://localhost/nbsoft/4.%20zadatak/api/users">Check all users from database</a><br>
             <?php }  ?>
