@@ -4,8 +4,7 @@ require_once './connection/connection.php';
 // we take request and method from the server
 // and we remove the prefix from the request
 $request = $_SERVER['REQUEST_URI'];
-$prefix = '/nbsoft/4.%20zadatak';
-$request = str_replace($prefix, '', $request);
+$request = str_replace(PREFIX, '', $request);
 $method = $_SERVER['REQUEST_METHOD'];
 
 

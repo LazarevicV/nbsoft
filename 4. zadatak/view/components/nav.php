@@ -1,5 +1,5 @@
 <?php
-$prefix = '/nbsoft/4.%20zadatak';
+$prefix = PREFIX;
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -15,25 +15,19 @@ $prefix = '/nbsoft/4.%20zadatak';
                 <?php else : ?>
                     <li class="nav-item"><a class="nav-link disabled" href="<?= $prefix ?>/api/orders">All orders</a></li>
                 <?php endif; ?>
-                <?php if (isset($_SESSION['user'])) {
-                    if (!$_SESSION['user']->username === 'vlazarevic') {
+                <?php if (isset($_SESSION['user']) && $_SESSION['user']->role === 'admin') :
                 ?>
                         <li class="nav-item">
-                            <a id="registerLink" class="nav-link disabled" href="<?= $prefix ?>/register" tabindex="-1" aria-disabled="true">Register</a>
+                            <a id="registerLink" class="nav-link" href="<?= $prefix ?>/register" tabindex="-1" aria-disabled="true">Register</a>
                         </li>
 
-                    <?php } else { ?>
+                    <?php else : ?>
                         <li class="nav-item">
-                            <a id="registerLink" class="nav-link" href="<?= $prefix ?>/register" tabindex="-1">Register</a>
+                            <a id="registerLink"
+                               class="nav-link disabled"
+                               href="<?= $prefix ?>/register" tabindex="-1">Register</a>
                         </li>
-                    <?php }
-                } else {
-                    ?> <li class="nav-item">
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="<?= $prefix ?>/register" tabindex="-1" aria-disabled="true" data-bs-toggle="tooltip" title="You are not admin, you can't access this page!">Register</a>
-                    </li>
-                    </li>
-                <?php } ?>
+                    <?php endif; ?>
                 <?php if (isset($_SESSION['user'])) {
                 ?>
                     <li class="nav-item"><a class="nav-link" href="<?= $prefix ?>/logout">Logout</a></li>

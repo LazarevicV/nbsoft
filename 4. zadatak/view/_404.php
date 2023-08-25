@@ -1,3 +1,7 @@
+<?php
+    $prefix = PREFIX_HOME;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,8 +14,13 @@
 </head>
 
 <body>
-    <div class="d-flex align-items-center justify-content-center vh-100 bg-primary">
-        <h1 class="display-1 fw-bold text-white">404</h1>
+    <div class="d-flex flex-column align-items-center
+    justify-content-center vh-100 bg-primary">
+        <h1 class="display-1 fw-bold text-white">404
+            page not found</h1>
+        <h3><a class="text-white" href="<?= $prefix ?>/">Go
+            back
+            home</a></h3>
     </div>
 </body>
 
