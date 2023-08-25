@@ -37,6 +37,86 @@ To get started with the project, follow these steps:
 
 2. **Description**
     - You can access this page by entering<br>`/1.%20zadatak/`<br> after your project path in url.
-    - Page is identical replica of my CV. This is done by using bootstrap grid system.
+    - Page is identical replica of my CV. That is done by using bootstrap grid system.
 
 ### 2. assigment 
+
+1. **Project structure**
+    - jss<br>
+        - main.js<br>
+        - validation.js<br>
+      
+   - index.html<br>
+   - insertIntoDB.php
+
+2. **Description**
+    - You can access this page by entering<br>`/2.%20zadatak/`<br> after your project path in url.
+    - After that, form should be displayed
+    - Validation is done in `validation.js`<br>
+   and logic for sending the data with ajax is done in `main.js`.
+    - `insertIntoDB.php` is in charge of receiving data and saving it into database.
+    - After you pass the validations and send the data, the form disappears, it's replaces by the data that is 
+      sent, and the message for success.
+
+### 3. assigment
+
+1. **Project structure**
+   - css<br>
+   - images<br>
+   - js
+   - slick<br>
+   index.html
+
+2. **Description**
+    - You can access this page by entering<br>`/3.%20zadatak/`<br> after your project path in url.
+    - After that, you should be able to see simple slider made with external slick library.
+
+### 4. assigment
+
+1. **Project structure**
+   - `app`
+     - Response.php
+   - `classes`
+     - Order.php
+     - OrderItem.php
+     - Product.php
+     - User.php
+   - `connection`
+     - config.php
+     - connection.php
+   - `controllers`
+     - ApiController.php
+     - Controller.php
+     - RedirectController.php
+     - UserController.php
+     - ViewController.php
+   - `view`
+     - components
+       - nav.php
+     - _404.php
+     - home.php
+     - login.php
+     - register.php<br>
+   
+   - index.html
+
+1.1 **project structure description**
+- `app` -> everything related to the application goes here. There is currently Response.php which is 
+  responsible for handling json api's
+- `classes` -> directory for storing models
+- `connection` -> directory where goes files related to database, here is also config.php which I used for declaring 
+  global variables called `config.php`
+
+2. **Description**
+    - You can access this page by entering<br>`/4.%20zadatak/`<br> after your project path in url.
+    - After that, you should be able to see a homepage for this assigment. There, you have all links that you can 
+      currently access
+    - You can log in with either regular user account or admin's account
+    - **admin account:**
+      - **username**: vlazarevic
+      - **password**: sifrasifra
+    - **standard account:**
+      - you can either make one using admin account and going to the register page, or you can use this info
+      - **username**: arajkovic
+      - **password**: anaana
+    
