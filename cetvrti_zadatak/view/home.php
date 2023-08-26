@@ -25,7 +25,7 @@ $prefix = PREFIX_HOME;
                                                             ?>
             </h1>
             <h2>Currently working routes:</h2>
-            <a href="http://localhost/nbsoft/4.%20zadatak/">Home route</a><br>
+            <a href="<?= $prefix ?>/">Home route</a><br>
             <?php if (isset($_SESSION['user']) && $_SESSION['user']->role == 'admin') {
             ?>
                 <a href="<?= $prefix ?>/api/orders">All orders
