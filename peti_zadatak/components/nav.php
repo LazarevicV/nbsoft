@@ -14,7 +14,7 @@ $prefix = PREFIX;
                 <li class="nav-item"><a class="nav-link" href="<?= $prefix ?>/moreThenTwoOrders.php">c)</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= $prefix ?>/countOfOrderItems.php">d)</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= $prefix ?>/atleastTwoOrderItems.php">e)</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?= $prefix ?>/atleastThreeProducts.php">e)</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= $prefix ?>/atleastThreeProducts.php">f)</a></li>
             </ul>
         </div>
     </div>
