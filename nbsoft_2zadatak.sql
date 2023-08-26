@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 25, 2023 at 02:27 AM
+-- Generation Time: Aug 26, 2023 at 03:37 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.33
 
@@ -55,7 +55,9 @@ INSERT INTO `User` (`id`, `firstName`, `lastName`, `pol`, `godinaRodjenja`, `gra
 (11, 'Pera', 'Peric', 'zenski', 1999, 'Beograd', 'Kozaracka 15', 1),
 (12, 'Marko', 'Bozic', 'muski', 2001, 'Beograd', 'usce', 1),
 (22, 'Vukadin', 'Lazarevic', 'muski', 2010, 'Beograd', 'Kozaracka 15', 1),
-(23, 'Vukadin', 'Lazarevic', 'muski', 1999, 'Beograd', 'Kozaracka 15', 1);
+(23, 'Vukadin', 'Lazarevic', 'muski', 1999, 'Beograd', 'Kozaracka 15', 1),
+(24, 'Vukadin', 'Lazarevic', 'muski', 1999, 'Beograd', 'Kozaracka 15', 1),
+(25, 'Jovan', 'Lazarevic', 'muski', 2007, 'Beograd', 'Kozaracka 15', 1);
 
 --
 -- Indexes for dumped tables
@@ -75,7 +77,7 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

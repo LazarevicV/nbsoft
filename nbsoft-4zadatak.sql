@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 25, 2023 at 02:27 AM
+-- Generation Time: Aug 26, 2023 at 03:36 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.33
 
@@ -116,9 +116,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ime`, `prezime`, `email`, `telefon`, `username`, `password`, `grad`, `postanski_broj`, `adresa`, `role`, `last_login`) VALUES
-(1, 'Vukadin', 'Lazarevic', 'vlazarevic@raf.rs', '0603413252', 'vlazarevic', 'd2a8d138cd31136f906fca85e81986d60df9a97c2551c63144ac4d370da38622', 'Beograd', '11130', 'Kozaracka 15', 'admin', '2023-08-24 23:46:29'),
+(1, 'Vukadin', 'Lazarevic', 'vlazarevic@raf.rs', '0603413252', 'vlazarevic', 'd2a8d138cd31136f906fca85e81986d60df9a97c2551c63144ac4d370da38622', 'Beograd', '11130', 'Kozaracka 15', 'admin', '2023-08-25 22:07:10'),
 (2, 'Marko', 'Bozic', 'mbozic@raf.rs', '060123456', 'mbozic', '406892809c1d9de3b80b9ba86f7b332c6cd8f8d131d69bb1c3f0ab5c9b668b5f', 'Beograd', '11000', 'Usce', 'user', '2023-08-24 22:42:45'),
-(4, 'Ana', 'Rajkovic', 'anarajkovic101@gmail.com', '060123456', 'arajkovic', '2dd591b21d63deb5c0ddef813831f7d09e82d0fa8f9d385ef0b82fd8bf9cef0a', 'Beograd', '11130', 'Branka Copica 32', 'user', '2023-08-24 23:47:18');
+(4, 'Ana', 'Rajkovic', 'anarajkovic101@gmail.com', '060123456', 'arajkovic', '2dd591b21d63deb5c0ddef813831f7d09e82d0fa8f9d385ef0b82fd8bf9cef0a', 'Beograd', '11130', 'Branka Copica 32', 'user', NULL),
+(5, 'Jovan', 'Lazarevic', 'jovanlazarevic@gmail.com', '060123456', 'jlazarevic', '4314d9a52a45a17930f5d1127cfc9f640611376f7514530f6c5c782832dfec57', 'Beograd', '11130', 'Kozaracka 15', 'user', NULL),
+(7, 'admin', 'admin', 'admin@admin.rs', '060123456', 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'Beograd', '11130', 'Kozaracka 15', 'admin', '2023-08-25 22:06:54'),
+(8, 'user', 'user', 'user@user.rs', '060123456', 'user', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'Beograd', '11130', 'Branka Copica 32', 'user', NULL);
 
 --
 -- Indexes for dumped tables
@@ -177,7 +180,7 @@ ALTER TABLE `Product`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
