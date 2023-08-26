@@ -1,12 +1,12 @@
 <?php
 $title = "Registration page";
-$prefix = '/nbsoft/4.%20zadatak';
+$prefix = PREFIX;
 
 ?>
 
 <?php
 
-$title = "Home page";
+$title = "Login page";
 
 ?>
 

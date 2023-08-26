@@ -1,7 +1,7 @@
 <?php
 
 $title = "Registration page";
-$prefix = '/nbsoft/4.%20zadatak';
+$prefix = PREFIX;
 
 ?>
 
